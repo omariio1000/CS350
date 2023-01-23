@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-//cc merge_sort.c -lm
-//to change: cc merge_sort.c -lm -DMAX=1000 -Dn=25
+//cc selection_sort.c -lm
+//to change: cc selection_sort.c -lm -DMAX=1000 -Dn=25
 
 #ifndef n
     #define n 20
