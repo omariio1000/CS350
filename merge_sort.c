@@ -17,16 +17,27 @@
     #define BUFFER_SIZE 1024
 #endif
 
+#ifndef MAX
+    #define MAX 1000
+#endif
+
+#ifndef FILE_INPUT
+    #define FILE_INPUT 1
+#endif
+
 int x[n];
 char buf[BUFFER_SIZE] = {0};
 FILE *file = NULL;
 
 void readFile();
+void randomGen();
 void mergeSort(int low, int high);
 void merge();
 
 int main(void) {
-    readFile();
+    if (FILE_INPUT) readFile();
+    else randomGen();
+    
     printf("INITIAL:\t");
     for (int i = 0; i < n; i++)printf("%d%s", x[i], (i == n - 1) ? "\n" : " ");
 
@@ -45,6 +56,11 @@ void readFile() {
         sscanf(buf, "%d", &x[i]);
         i++;
     }
+}
+
+void randomGen() {
+    srandom(time(NULL));
+    for (int i = 0; i < n; i++) x[i] = floor(random() % MAX);
 }
 
 void mergeSort(int low, int high) {
