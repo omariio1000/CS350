@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <math.h>
 #include <stdlib.h>
 
-//cc recursive_equations_hw.c -lm
+//cc recursive_equations_hw.c
 
 #ifndef MAX
     #define MAX 10
