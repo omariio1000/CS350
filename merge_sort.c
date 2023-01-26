@@ -35,7 +35,14 @@ void mergeSort(int low, int high);
 void merge();
 
 int main(void) {
-    if (FILE_INPUT) readFile();
+    if (FILE_INPUT) {
+        //readFile();
+        int i = 0;
+    while (fgets(buf, 1024, stdin)) {
+        sscanf(buf, "%d", &x[i]);
+        i++;
+    }
+    }
     else randomGen();
     
     printf("INITIAL:\t");
