@@ -38,10 +38,10 @@ int main(void) {
     if (FILE_INPUT) {
         //readFile();
         int i = 0;
-    while (fgets(buf, 1024, stdin)) {
-        sscanf(buf, "%d", &x[i]);
-        i++;
-    }
+        while (fgets(buf, BUFFER_SIZE, stdin)) {
+            sscanf(buf, "%d", &x[i]);
+            i++;
+        }
     }
     else randomGen();
     
