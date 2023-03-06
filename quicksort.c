@@ -7,7 +7,7 @@
 cc quicksort.c -lm
 by default uses input.txt
 to change file: -DfileName=\"filename.txt\"
-to random gen: -DFILE_INPUT=0
+to use file input: -DFILE_INPUT=1
 can change random gen vals with -Dn, and -DMAX
 */
 
@@ -28,7 +28,7 @@ can change random gen vals with -Dn, and -DMAX
 #endif
 
 #ifndef FILE_INPUT
-    #define FILE_INPUT 1
+    #define FILE_INPUT 0
 #endif
 
 int x[n];
