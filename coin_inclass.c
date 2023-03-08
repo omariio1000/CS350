@@ -2,6 +2,10 @@
 #include <math.h>
 #include <stdlib.h>
 
+#ifndef usef2
+    #define usef2 1
+#endif
+
 int f(int n);
 int f2(int n);
 int *t;
@@ -12,7 +16,11 @@ int main (void) {
     scanf("%d", &coins);
     t = (int*) malloc(sizeof(int) * coins);
     for (int i = 0; i < coins; i++) t[i] = -1;
-    int coinsReq = f2(coins);
+    t[1] = t[3] = t[4] = 1;
+    t[2] = 2;
+    int coinsReq;
+    if (usef2) coinsReq = f2(coins);
+    else coinsReq = f(coins);
     printf("Minimum number of coins is %d\n", coinsReq);
     free(t);
     t = NULL;
