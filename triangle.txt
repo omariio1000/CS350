@@ -1,0 +1,19 @@
+int min(int n) {
+    for (int row = n - 2; row >= 0; row--) {
+        for (int column = 0; column < row + 1; column++) {
+            
+            int leftIdx = column;
+            int rightIdx = leftIdx + 1;
+
+            if (rightIdx > n - 1) res[row][column] += res[row + 1][rightIdx];
+            else if (res[row + 1][rightIdx] > res[row + 1][leftIdx]) res[row][column] += res[row + 1][leftIdx];
+            else res[row][column] += res[row + 1][rightIdx];
+
+
+
+        }
+    }
+    return res[0][0];
+}
+
+//O(n^2) for time and O(n^2) for space efficiency
