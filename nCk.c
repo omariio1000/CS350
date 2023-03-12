@@ -16,6 +16,7 @@ int main(void) {
     
     printf("%d-Choose-%d is %d\n", n, k, nCk(n, k));
 
+    free(f);
     return 0;
 }
 

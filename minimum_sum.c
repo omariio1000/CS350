@@ -14,6 +14,9 @@ int main(void) {
 
     printf("The smallest sum is %d\n", min(n));
 
+    for (int i = 0; i < n; i++) free(triangle[i]);
+    free(triangle);
+
     return 0;
 }
 
@@ -39,7 +42,12 @@ int min(int n) {
         }
         printf("\n");
     }
-    return res[0][0];
+    int ret = res[0][0];
+
+    for (int i = 0; i < n; i++) free(res[i]);
+    free(res);
+
+    return ret;
 }
 
 void init(int **t) {

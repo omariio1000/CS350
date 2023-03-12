@@ -12,7 +12,7 @@ int main(void) {
     init();
 
     printf("The maximum sale price is %d\n", rodCut(n));
-
+    free(p);
     return 0;
 }
 
@@ -25,7 +25,9 @@ int rodCut(int n) {
         res[i] = max;
     }
 
-    return res[n];
+    int ret = res[n];
+    free(res);
+    return ret;
 }
 
 void init() {

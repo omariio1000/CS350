@@ -8,3 +8,5 @@ int nCk(int n, int k) {
     }
     return f[n][k];
 }
+
+//time is O(n^2) space is O(n)
